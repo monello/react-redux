@@ -14,7 +14,7 @@ export const SET_TODOS = "SET_TODOS";      // Set all the Todos, This one will b
 // - (optional) The payload. The payload contains any extra information that is require to implement that particular action
 export type ActionTypes =
     | { type: typeof ADD_TODO; }
-    | { type: typeof DELETE_TODO; payload: number; } // here the payload will be the identifier of the Todo item we want to delete
+    | { type: typeof DELETE_TODO; payload: number; } // payload = will be the identifier of the Todo item we want to delete
     | {
         type: typeof UPDATE_TODO;
         payload: {
@@ -24,5 +24,5 @@ export type ActionTypes =
     }
     | { type: typeof TOGGLE_TODO; payload: number; }
     | { type: typeof SET_NEWTODO; payload: string; }
-    | { type: typeof SET_TODOS; payload: Todo[]; }
+    | { type: typeof SET_TODOS; payload: Todo[]; }  // payload = a list of all the todos. will replace all the current todos
     ;
