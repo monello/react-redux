@@ -26,3 +26,34 @@ export type ActionTypes =
     | { type: typeof SET_NEWTODO; payload: string; }
     | { type: typeof SET_TODOS; payload: Todo[]; }  // payload = a list of all the todos. will replace all the current todos
     ;
+
+// Our list of action creators (action objects)
+//  - Basically we describe how the functions should lokk
+//  - These action objects (creators) will be forwarded to the Reducer, the reducer that applies these to the state and then derives a new state
+
+export const addTodo = (): ActionTypes => ({ type: ADD_TODO });
+
+export const deleteTodo = (id: number): ActionTypes => ({
+    type: DELETE_TODO,
+    payload: id
+});
+
+export const updateTodo = (id: number, text: string): ActionTypes => ({
+    type: UPDATE_TODO,
+    payload: { id, text }
+});
+
+export const toggleTodo = (id: number): ActionTypes => ({
+    type: TOGGLE_TODO,
+    payload: id
+});
+
+export const setNewTodo = (text: string): ActionTypes => ({
+    type: SET_NEWTODO,
+    payload: text
+});
+
+export const setTodos = (todos: Todo[]): ActionTypes => ({
+    type: SET_TODOS,
+    payload: todos
+});
